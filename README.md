@@ -1,5 +1,12 @@
 # PuntuacionesFrontend
 
+- Servidor BD: MongoDB
+- Servidor Backend: NodeJS
+- Framework Frontend: Angular 8
+- Despliegue en Heroku
+- Editor Visual Studio Code
+- Repositorio: Git y Github
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.21.
 
 ## Development server
