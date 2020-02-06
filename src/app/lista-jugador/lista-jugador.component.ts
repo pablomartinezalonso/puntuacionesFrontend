@@ -13,7 +13,38 @@ export class ListaJugadorComponent implements OnInit {
   constructor(public jugadorService: JugadorService) { }
 
   ngOnInit() {
-    this.listaJugadores = this.jugadorService.getAllJugadores();
+    this.getPuntuaciones();
+
+  }
+
+  getPuntuaciones(){
+    this.jugadorService.getAllJugadores().subscribe(
+      result => {
+        console.log(result);
+        this.listaJugadores = result['datos'];
+    },
+    error => {
+      alert('Error al listar las puntuaciones');
+    },
+    () => {
+
+    }
+    );
+  }
+
+
+  borrarPuntuacion(id: string) {
+    this.jugadorService.removeJugador(id).subscribe(
+      result => {
+        this.getPuntuaciones();
+      },
+      error => {
+        alert(`Error al borrar la puntuacion ${error}`);
+      },
+      () => {
+
+      }
+    );
   }
 
 }
